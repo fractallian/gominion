@@ -1,5 +1,6 @@
 img {
     height: 50px;
+    max-width: auto;
 }
 h3 {
     margin-left: 8px;
