@@ -47,12 +47,6 @@ window.Go = (function() {
     this.Player = function(name, index) {
         this.name = name;
         this.index = index;
-
-        this.turns = function(rounds) {
-            return _.compact(_.map(rounds, function(round) {
-                return round.turns[name];
-            }));
-        };
     };
 
     this.Card = function(name) {
