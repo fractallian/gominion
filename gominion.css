@@ -1,0 +1,55 @@
+img {
+    height: 50px;
+}
+h3 {
+    margin-left: 8px;
+}
+.round {
+    border-top: 1px solid #ccc;
+}
+.twoplayers .turn {
+    width: 50%;
+}
+.threeplayers .turn {
+    width: 33.33%;
+}
+.fourplayers .turn {
+    width: 25%;
+}
+.turn {
+    float: left;
+    width: 25%;
+}
+.card {
+    text-align: center;
+    float: left;
+    margin: 4px;
+    padding: 4px;
+}
+.card strong {
+    display: block;
+}
+.card .number {
+    font-size: 30px;
+    font-weight: bold;
+    display: block;
+    width: 54px;
+    padding-top: 13px;
+    position: absolute;
+}
+.trash {
+    background-color: red;
+}
+.log {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+    z-index: 10;
+    padding: 4px;
+}
+.toggle-log {
+    display: block;
+    clear: left;
+    margin-left: 8px;
+}

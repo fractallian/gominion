@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gominion</title>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./gominion.css">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js"></script>
+    <script type="text/javascript" src="./gominion.js"></script>
+</head>
+<body>
+    <div class="well">
+        <form class="form-inline">
+            <input type="text" name="logfile" />
+            <a href="#" class="btn">Submit</a>
+        </form>
+    </div>
+    <div id="main"></div>
+    <script id="main-template" type="text/x-handlebars-template">
+        <div class="clearfix">
+            {{#each players}}
+                <div class="turn">
+                    <h3>{{name}} {{score}}</h3>
+                </div>
+            {{/each}}
+        </div>
+        {{#each rounds}}
+            <div class="round clearfix">
+                {{#each turns}}
+                    <div class="turn">
+                        {{#if this}}
+                            {{#each gains}}
+                                <div class="card gain">
+                                    {{> card}}
+                                </div>
+                            {{/each}}
+                            {{#each trashes}}
+                                <div class="card trash">
+                                    {{> card}}
+                                </div>
+                            {{/each}}
+                            <a href="#" class="toggle-log">Log</a>
+                            <div class="log">
+                                {{{this.log}}}
+                            </div>
+                        {{/if}}
+                    </div>
+                {{/each}}
+            </div>
+        {{/each}}
+    </script>
+
+    <script id="card-template" type="text/x-handlebars-template">
+        <strong>{{name}}</strong>
+        {{#if value}}<span class="number">{{value}}</span>{{/if}}
+        <img src="{{imgUrl}}" />
+    </script>
+</body>
+</html>
